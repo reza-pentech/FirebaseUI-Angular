@@ -27,6 +27,7 @@ export class FirebaseuiAngularLibraryService {
         auth.useEmulator(`http://${useEmulator.join(':')}`);
       }
       (<any>window).firebaseUiInstance = new firebaseui.auth.AuthUI(auth);
+      auth.tenantId = 'client';
     }
     // store the firebaseui instance on the window object to prevent double initialization
     this.firebaseUiInstance = (<any>window).firebaseUiInstance as firebaseui.auth.AuthUI;
